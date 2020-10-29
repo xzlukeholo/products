@@ -1,8 +1,8 @@
 import os #operating system
 products = []
 
-#讀取檔案
-if os.path.isfile('products.csv'):    #檢查是否有檔案
+#檢查是否有檔案，有:讀取檔案，沒有:跳過讀取檔案
+if os.path.isfile('products.csv'):
 	print('資料讀取成功!')
 	with open('products.csv', 'r', encoding = 'utf-8') as f:
 		for line in f:
@@ -46,4 +46,3 @@ with open('products.csv', 'w', encoding = 'utf-8') as f:
 	for p in products:
 		p[1] = str(p[1])
 		f.write(p[0] + ',' + p[1] + '元' + '\n')
-		
